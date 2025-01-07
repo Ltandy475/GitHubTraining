@@ -24,6 +24,7 @@ jobs:
     name: Display a file
     runs-on: ubuntu-latest
     #needs: job1-display_output
+    environment: course
     env:
       name: "LaMonte"
     steps:
