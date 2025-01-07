@@ -1,9 +1,9 @@
 on:
   workflow_call:
-   inputs:
-     message:
+    inputs:
+      message:
        required: true
-       typoep: string
+       type: string
 
 jobs:
   job_for_main:
