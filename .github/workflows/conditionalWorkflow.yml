@@ -19,10 +19,3 @@ jobs:
             echo Condition does not match
           fi
 
-  conditional_job:
-    runs-on: ubuntu-latest
-      if $message == *"condition"*; then
-        echo All good
-      else
-        echo Not Good
-      fi
