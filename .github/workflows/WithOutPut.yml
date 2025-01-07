@@ -20,9 +20,9 @@ jobs:
           cat test.txt
         shell: bash
 
-        name: Outpt for job 2
+      - name: Output for job 2
           id: myoutput
-          fun:  }
+          run:  }
             echo ":L:set-output name=mystring::This is job1 output"
             echo "This is job1 output" >> $out
     outputs:
