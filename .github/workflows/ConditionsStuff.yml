@@ -25,7 +25,7 @@ jobs:
         run:  |
             echo "::set-output name=mystring::This is job1 output"
     outputs:
-      job1_output: ${{ steps.myoutput.outputs.mystring }}
+      job1_output: ${{ steps.myoutput.outputs.mystrAing }}
 
   conditional_job_success:
     name: Conditional job for Success
@@ -41,7 +41,7 @@ jobs:
     if: failure()
     steps:
       - name: Display the output
-        run: echo "this job is running since previous job executed successfully"
+        run: echo "this job is NOT running since previous job executed successfully"
 
   job2-display_output:
     name: Display a file too
