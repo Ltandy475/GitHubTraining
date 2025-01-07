@@ -12,6 +12,12 @@ jobs:
         id: commit_message
         run: echo "Commit message - ${{ github.event.head_commit.message }}"
 
+      - name: Store environ
+        uses: actions/checkout@v2
+        env:
+          message: {{ github.event.head_commit.message }}
+       
+
       - name: Check if the commit message contains "conditions"
         id: check_message
         run:  |
@@ -23,11 +29,10 @@ jobs:
             echo Condition does not match
           fi
 
-    conditional_job:
-      runs-on: ubuntu-latest
-      if: [[ "${{github.event.head_commit.message}}", == *"condition"* ]]
-      steps:
-        - name: Display the output
-          run: echo "this job is  running since previous job contains condition"
-
-
+  conditional_job:
+    runs-on: ubuntu-latest
+      if $message == *"condition"*; then
+        echo All good
+      else
+        echo Not Good
+      fi
