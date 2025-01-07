@@ -31,5 +31,5 @@ jobs:
       - name: Job2-Display the output of the file
         run: |
          echo "this is name $name"
-         echo "this is from ${{ topic }}"
+         echo "this is from ${{ vars.topic }}"
         shell: bash
