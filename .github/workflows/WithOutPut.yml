@@ -42,8 +42,8 @@ jobs:
          echo "Testing my ${{secrets.TestSecret}}"
          echo "This is job2.  The output is coming from job1 - ${{ needs.job1-display_output.outputs.job1_output}}"
         shell: bash
-    call-reusable-workflow:
-      uses: ./,github/workflows/reusable-workflow.yml
-      with:
-        message: "this is main workflow ok"
+  call-reusable-workflow:
+    uses: ./,github/workflows/reusable-workflow.yml
+    with:
+      message: "this is main workflow ok"
 
