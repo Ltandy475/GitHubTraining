@@ -24,10 +24,7 @@ jobs:
     name: Display a file
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
-        
       - name: Job2-Display the output of the file
         run: |
-          cat test.txt
+         echo "this is job 2"
         shell: bash
