@@ -24,6 +24,7 @@ jobs:
         id: myoutput
         run:  |
             echo "::set-output name=mystring::This is job1 output"
+            echo "This is job1 output" >> $out
     outputs:
       job1_output: ${{ steps.myoutput.outputs.mystring }}
 
@@ -40,5 +41,5 @@ jobs:
          echo "this is name $name"
          echo "this is from ${{ vars.topic }}"
          echo "Testing my ${{secrets.TestSecret}}"
-         echo "This is job2.  The output is coming from job1 - ${{ needs.job1-display_output.outputs.job1_outpue}}"
+         echo "This is job2.  The output is coming from job1 - ${{ needs.job1-display_output.outputs.job1_output}}"
         shell: bash
