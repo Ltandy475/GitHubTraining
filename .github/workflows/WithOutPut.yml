@@ -24,7 +24,6 @@ jobs:
         id: myoutput
         run:  |
             echo "::set-output name=mystring::This is job1 output"
-            echo "This is job1 output" >> $out
     outputs:
       job1_output: ${{ steps.myoutput.outputs.mystring }}
 
