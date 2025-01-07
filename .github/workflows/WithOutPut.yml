@@ -45,5 +45,5 @@ jobs:
     call-reusable-workflow:
       uses: ./,github/workflows/reusable-workflow.yml
       with:
-        message: "this is main workflow"
+        message: "this is main workflow ok"
 
