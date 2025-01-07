@@ -21,8 +21,8 @@ jobs:
         shell: bash
 
       - name: Output for job 2
-          id: myoutput
-          run:  }
+        id: myoutput
+        run:  |
             echo ":L:set-output name=mystring::This is job1 output"
             echo "This is job1 output" >> $out
     outputs:
