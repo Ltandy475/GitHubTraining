@@ -1,0 +1,13 @@
+on:
+  workflow_call:
+   inputs:
+     message:
+       required: true
+       typoep: string
+
+jobs:
+  job_for_main:
+    rns-on: ubuntu-latest
+    steps:
+      - name: Display 
+      
