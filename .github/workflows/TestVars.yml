@@ -4,6 +4,7 @@ on:
 
 env:
   DAY_OF_WEEK: Monday
+  TopLevel_msg:  "${{github.event.head_commit.message}}"
 
 jobs:
   greeting_job:
@@ -22,7 +23,7 @@ jobs:
       Stat: "${{github.event.head_commit.message}}"
     steps:
       - name: What I am doing
-        run: echo $Stat
+        run: echo "{{$Stat}} {{$TopLevel_msg}}"
 
 
 #if [[ "${{github.event.head_commit.message}}" == *"condition"* ]]; then
