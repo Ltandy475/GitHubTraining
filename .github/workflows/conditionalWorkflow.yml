@@ -1,6 +1,9 @@
 on:
   push
 
+env:
+  bStat: ${{ contains(github.event.head_commit.message, 'condition') }}
+
 jobs:
   check-commit-message:
     runs-on: ubuntu-latest
@@ -18,4 +21,15 @@ jobs:
             # statement
             echo Condition does not match
           fi
+
+  test_bstat:
+    if: $bStat 
+    runs-on: ubntu-latest
+    steps:
+      - name:  Read the Workflow Var
+        run: echo $bStat
+          
+
+
+
 
