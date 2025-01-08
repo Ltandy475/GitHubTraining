@@ -21,12 +21,12 @@ jobs:
     runs-on: ubuntu-latest
     env:
       Stat: "${{github.event.head_commit.message}}"
-      bStat: contains(github.event.head_commit.message, 'Wonderful')
+      bStat: ${{ contains(github.event.head_commit.message, 'Wonderful') }}
     steps:
       - name: What I am doing
         run: echo "{{ $Stat }} {{ $TopLevel_msg }}"
       - name: Whats the bStat
-        run: echo ${{ $bStat }}
+        run: echo $bStat
 
 
 #if [[ "${{github.event.head_commit.message}}" == *"condition"* ]]; then
