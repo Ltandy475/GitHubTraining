@@ -25,6 +25,7 @@ jobs:
     steps:
       - name: What I am doing
         run: echo "{{$Stat}} {{$TopLevel_msg}}"
+      - name: Whats the bStat
         run: echo bStat
 
 
